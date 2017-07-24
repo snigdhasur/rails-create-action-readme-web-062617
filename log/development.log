@@ -40,3 +40,63 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block (3 levels) in <class:Railtie> at /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/activerecord-5.0.4/lib/active_record/railtie.rb:113)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title Goes HEre"], ["description", "desc goes here..."], ["created_at", "2017-07-24 13:35:29.902457"], ["updated_at", "2017-07-24 13:35:29.902457"]]
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/posts/new" for ::1 at 2017-07-24 09:40:06 -0400
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block (3 levels) in <class:Railtie> at /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/activerecord-5.0.4/lib/active_record/railtie.rb:113)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 433ms (Views: 417.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts" for ::1 at 2017-07-24 09:40:22 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9NabaqTd3ehj1qcdkBlvO68YQZ5Xbz++Q0gKj3LKWUlNOD3vr/lXpx9k0iUsrAg1dg8AFU6pRxps+j4kHcol7w==", "title"=>"Hello", "description"=>"I am Snigdha", "commit"=>"Submit Post"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `post' for #<PostsController:0x007f999a384df8>
+Did you mean?  @post):
+  
+app/controllers/posts_controller.rb:16:in `create'
+  Rendering /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.6ms)
+  Rendering /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (77.2ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendering /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendering /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from block in render at /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/actionview-5.0.4/lib/action_view/template.rb:159)
+  Rendered /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (63.9ms)
+  Rendering /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendering /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Snigdha/.rvm/gems/ruby-2.3.1@global/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (145.0ms)
+Started POST "/posts" for ::1 at 2017-07-24 09:40:40 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9NabaqTd3ehj1qcdkBlvO68YQZ5Xbz++Q0gKj3LKWUlNOD3vr/lXpx9k0iUsrAg1dg8AFU6pRxps+j4kHcol7w==", "title"=>"Hello", "description"=>"I am Snigdha", "commit"=>"Submit Post"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hello"], ["description", "I am Snigdha"], ["created_at", "2017-07-24 13:40:40.298923"], ["updated_at", "2017-07-24 13:40:40.298923"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 57ms (ActiveRecord: 1.9ms)
+
+
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
